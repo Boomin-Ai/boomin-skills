@@ -4,7 +4,7 @@ const path = require("node:path");
 
 const root = path.resolve(__dirname, "..");
 const skill = path.join(root, "SKILL.md");
-const text = fs.readFileSync(skill, "utf8");
+const text = fs.readFileSync(skill, "utf8").replace(/\r\n/g, "\n");
 
 const required = [
   /^---\nname: boomin-referral-installer\n/m,
