@@ -67,21 +67,23 @@ Prefer `@boomin/cli` for deterministic setup. Do not manually recreate token cre
 
    Replace `custom` with `clerk` or `supabase` when detected.
 
-6. Install runtime packages if needed:
+6. Install runtime packages if needed (lead tracking requires SDK beta.8 and CLI 0.9.0 or later):
 
    ```bash
-   npm install @boomin/connect @boomin/server
+   npm install @boomin/sdk @boomin/connect @boomin/server
    ```
 
    Use the app's package manager if it is not npm.
 
-7. Verify:
+7. For lead acquisition, read [references/leads.md](references/leads.md) and complete the generated `boomin/LEAD_SETUP.md`. Inspect the actual auth customer table and ID before generating the new-account migration. Wire verified session/database hooks, landing capture, both OTP/OAuth completion, and protected scheduled delivery. Adapt existing code rather than overwrite a working integration.
+
+8. Verify:
 
    ```bash
    npx @boomin/cli@latest doctor --json
    ```
 
-   Then run the app's build/test command.
+   Then run the app's build/test command and an isolated signup/outage rehearsal. Generated files or a passing route check do not prove signup credit. Report local verification separately from genuinely observed production events.
 
 ## Route conflicts
 
