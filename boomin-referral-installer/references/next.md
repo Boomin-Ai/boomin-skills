@@ -25,6 +25,9 @@ The CLI creates:
 - `app/api/boomin/partner/status/route.js`
 - `app/r/[code]/route.js`
 - `app/partner/page.jsx`
+- `lib/boomin-attribution.js`, `lib/boomin-leads.js`, `lib/boomin-lead-hooks.js`
+- `app/api/boomin/leads/signup/route.js`, `app/api/boomin/leads/deliver/route.js`
+- `boomin/lead-tracking.sql`, `boomin/LEAD_SETUP.md`
 
 The partner page is starter UI only. Match the app's design system after the scaffold works.
 
@@ -51,4 +54,4 @@ After install:
 3. Join the program.
 4. Confirm the page shows a referral link.
 5. Visit the redirect route with the referral code.
-6. Confirm metrics update after refresh.
+6. Complete [lead tracking verification](leads.md); confirm credits after durable delivery, including OTP/OAuth, duplicate signup and outage recovery.
